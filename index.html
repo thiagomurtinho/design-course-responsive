@@ -14,11 +14,11 @@
         <header>
             <img src="images/logo.svg" alt="23andfour top logo" class="logo">
             <nav>
-                <a href="#" class="nav-hide-desktop">
+                <a href="#" class="hide-desktop">
                     <img src="images/ham.svg" alt="toggle menu" class="menu-mobile" id="menu-mobile">
                 </a>
     
-                <ul class="show-desktop hide-mobile">
+                <ul class="show-desktop hide-mobile" id="nav">
                     <li id="menu-exit-btn" class="hide-desktop exit-btn"><img src="images/exit.svg" alt="exit menu"></li>
                     <li><a href="#">home</a></li>
                     <li><a href="#">services</a></li>
@@ -98,5 +98,20 @@
         </div>
     </footer>
 
+    <script>
+        let menu = document.getElementById('menu-mobile');
+        let nav = document.getElementById('nav');
+        let exit = document.getElementById('menu-exit-btn');
+
+        menu.addEventListener('click', function(e){
+            nav.classList.toggle('hide-mobile')
+            e.preventDefault()
+        })
+        exit.addEventListener('click', function(e){
+            nav.classList.add('hide-mobile')
+            e.preventDefault()
+        })
+        
+    </script>
 </body>
 </html>
